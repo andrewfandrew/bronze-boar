@@ -1,0 +1,126 @@
+<?php
+/**
+ * The main template file. Includes the loop.
+ *
+ *
+ * @package Customizr
+ * @since Customizr 1.0
+ */
+?>
+<?php do_action( '__before_main_wrapper' ); ##hook of the header with get_header ?>
+<div id="main-wrapper" class="<?php echo apply_filters( 'tc_main_wrapper_classes' , 'container' ) ?>">
+
+
+
+
+
+
+    <?php do_action( '__before_main_container' ); ##hook of the featured page (priority 10) and breadcrumb (priority 20)...and whatever you need! ?>
+    
+    <div class="container" role="main">
+        <div class="<?php echo apply_filters( 'tc_column_content_wrapper_classes' , 'row column-content-wrapper' ) ?>">
+
+
+
+            <?php do_action( '__before_article_container'); ##hook of left sidebar?>
+                
+                <div id="content" class="<?php echo tc__f( '__screen_layout' , tc__f ( '__ID' ) , 'class' ) ?> article-container">
+                
+                
+<svg height="40" width=100%>
+  <g fill="none" stroke="#CCE6FF">
+    <path stroke-width="4" d="M5 40 l850 0" />
+  </g>
+  Sorry, your browser does not support inline SVG.
+</svg>
+            <!-- the animated text for the countdown timer, the heading -->       
+                   <svg width=100% height="120">
+  <g transform="translate(40,40)"> 
+    <text id="TextElement" x="0" y="0" style="font-family:Verdana;font-size:8px; visibility:hidden">Countdown to WR attempt
+      <set attributeName="visibility" attributeType="CSS" to="visible" begin="1s" dur="5s" fill="freeze" />
+      <animateMotion path="M 0 0 L 60 60" begin="1s" dur="5s" fill="freeze" />
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-30" to="0" begin="1s" dur="5s" fill="freeze" /> 
+      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="3" additive="sum" begin="1s" dur="5s" fill="freeze" /> 
+    </text> 
+  </g> 
+  Sorry, your browser does not support inline SVG.
+</svg>
+                   
+                <!-- the jquery countdown timer -->
+                    
+                    <script>
+                    var test1 = new Countdown({
+                         // Using a "dead line" date (NOTE: If "time" set this deadline date will NOT be used ("time" over-rides date))
+                         year   : 2015,  // (optional) The target date's year
+                         month  : 7,     // (optional) The target date's month
+                         day    : 31,     // (optional) The target date's day
+                         hour   : 1,     // (optional) The target date's hour
+                         ampm   : "pm",  // (optional) Is the hour refering to AM (early/day) or PM (late/night)?
+                         minute : 0,          // (optional) The target date's minutes
+                         second : 0,          // (optional) The target date's seconds
+                         offset : 0,          // (optional) Number of hours to offset. Can be positive or negative.	
+                         
+                         width    : 310,      // Defaults to 200 x 30 pixels, you can specify a custom size here
+                         height   : 60,       //
+                          
+                         
+                         });
+</script>
+                
+                <svg height="110" width=100%>
+  <g fill="none" stroke="#CCE6FF">
+    <path stroke-width="2" stroke-linecap="round" stroke-dasharray="10,10" d="M5 50 l860 0" />
+    
+    
+  </g>
+</svg>
+                
+                    
+                    <?php do_action ('__before_loop');##hooks the heading of the list of post : archive, search... ?>
+
+                        <?php if ( tc__f('__is_no_results') || is_404() ) : ##no search results or 404 cases ?>
+
+                            <article <?php tc__f('__article_selectors') ?>>
+                                <?php do_action( '__loop' ); ?>
+                            </article>
+                            
+                        <?php endif; ?>
+
+                        <?php if ( have_posts() && !is_404() ) : ?>
+                            <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
+                                <?php the_post(); ?>
+
+                                <?php do_action ('__before_article') ?>
+                                    <article <?php tc__f('__article_selectors') ?>>
+                                        <?php do_action( '__loop' ); ?>
+                                    </article>
+                                <?php do_action ('__after_article') ?>
+
+                            <?php endwhile; ?>
+
+                        <?php endif; ##end if have posts ?>
+                        
+                        		                <svg height="140" width=100%>
+  <g fill="none" stroke="#CCE6FF">
+    <path stroke-width="2" stroke-linecap="round" stroke-dasharray="20,20" d="M5 20 l860 0" />
+    
+    
+  </g>
+</svg>
+
+                    <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
+
+
+
+                </div><!--.article-container -->
+
+           <?php do_action( '__after_article_container'); ##hook of left sidebar ?>
+
+        </div><!--.row -->
+    </div><!-- .container role: main -->
+
+    <?php do_action( '__after_main_container' ); ?>
+
+</div><!--#main-wrapper"-->
+
+<?php do_action( '__after_main_wrapper' );##hook of the footer with get_footer ?>

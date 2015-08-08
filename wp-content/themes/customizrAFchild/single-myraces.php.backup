@@ -1,0 +1,141 @@
+<?php
+/**
+ * The main template file. Includes the loop.
+ *
+ *
+ * @package Customizr
+ * @since Customizr 1.0
+ */
+?>
+
+
+<?php do_action( '__before_main_wrapper' ); ##hook of the header with get_header ?>
+<div id="main-wrapper" class="<?php echo tc__f( 'tc_main_wrapper_classes' , 'container' ) ?>">
+
+    <?php do_action( '__before_main_container' ); ##hook of the featured page (priority 10) and breadcrumb (priority 20)...and whatever you need! ?>
+    
+    <div class="container" role="main">
+         <div class="<?php echo tc__f( 'tc_column_content_wrapper_classes' , 'row column-content-wrapper' ) ?>">
+
+            <?php do_action( '__before_article_container'); ##hook of left sidebar?>
+                
+                <div id="content" class="<?php echo tc__f( '__screen_layout' , tc__f ( '__ID' ) , 'class' ) ?> article-container">
+                    
+                    <?php do_action ('__before_loop');##hooks the header of the list of post : archive, search... ?>
+
+                        <?php if ( tc__f('__is_no_results') || is_404() ) : ##no search results or 404 cases ?>
+                        
+                                <article <?php tc__f('__article_selectors') ?>>
+                                <?php do_action( '__loop' ); ?>
+                                              
+                                </article>
+                            
+                        <?php endif; ?>
+
+                        <?php if ( have_posts() && !is_404() ) : ?>
+                            <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
+                                <?php the_post(); ?>
+
+                                <?php do_action ('__before_article') ?>
+                                    <article <?php tc__f('__article_selectors') ?>>
+                                        <?php do_action( '__loop' ); ?>
+                                        
+                                        
+                                        <?php
+                                           
+                                  	// AF: checks if the page title is 'Race reports'
+                                  	// if( ! is_page( 'Race reports' ) && get_field( 'race_country') ) 
+                                  	
+                                  	
+                                  	
+                                  	if( get_field( 'race_country') )
+					{
+						echo '<div class="row-fluid"><div class="span11 offset1"><p><h4>Race country</h4></p>' . get_field('race_country');
+					}
+					
+					if( get_field( 'race_city_town') )
+					{
+						echo '<h4>Race city or town</h4>' . get_field('race_city_town');
+					}
+					
+					
+					
+					 if( get_field( 'start_date') )
+					{
+						echo '<h4>Start date</h4>' . get_field('start_date');
+					}
+
+					if( get_field( 'finish_date') )
+					{
+						echo '<h4>Finish date</h4>' . get_field('finish_date');
+					}
+					
+					
+					if( get_field( 'reason_for_doing') )
+					{
+						echo '<h4>Reason for doing</h4>' . get_field('reason_for_doing');
+					}
+					
+					
+					
+					if( get_field( 'race_duration') )
+					{
+						echo '<h4>Race duration</h4>' . get_field('race_duration');
+					}
+					
+					if( get_field( 'race_terrain') )
+					{
+						echo '<h4>Race terrain</h4>' . get_field('race_terrain');
+					}
+					
+					
+					echo '<hr class="featurette-divider __after_loop"></hr>';
+					
+					if( get_field( 'web_site') )
+					{
+						echo '<h4>Web sites</h4>' . get_field('web_site');
+					}
+					
+					
+					if( get_field( 'location_on_map') )
+					{
+						echo '<h4>Location on map</h4>'
+						 . get_field('location_on_map');
+					}
+					
+					echo '<hr class="featurette-divider __after_loop"></hr>';
+					
+					if( get_field( 'race_report') )
+					{
+						echo '<h4>Race report</h4>' . get_field('race_report') . '</div></div>';
+					}
+					
+                                      ?>  
+                                      
+                                      <?php echo '<br></br><br></br>'; ?>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </article>
+                                <?php do_action ('__after_article') ?>
+
+                            <?php endwhile; ?>
+
+                        <?php endif; ##end if have posts ?>
+
+                    <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
+
+                </div><!--.article-container -->
+
+           <?php do_action( '__after_article_container'); ##hook of left sidebar ?>
+
+        </div><!--.row -->
+    </div><!-- .container role: main -->
+
+    <?php do_action( '__after_main_container' ); ?>
+
+</div><!--#main-wrapper"-->
+
+<?php do_action( '__after_main_wrapper' );##hook of the footer with get_get_footer ?>

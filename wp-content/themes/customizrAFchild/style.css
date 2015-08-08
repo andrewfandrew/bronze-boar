@@ -1,0 +1,265 @@
+/**
+* Template: customizr
+* Theme URI: http://www.themesandco.com/customizr
+* Description:  Enjoy designing a beautiful website live with the WP customizer : 17 color skins, logo upload, social profiles, sliders, layout choices, home featured blocks, or even live css styling. The flat and fully responsive design can be used for small businesses, portfolios, blogs, corporate sites or landing pages. Built with valid HTML5 and CSS3 (from the Twitter Bootstrap), cross-browser tested, the theme is translation ready and available in 21 languages. Ready for WooCommerce, bbPress, qTranslate, the code is easily extensible with a comprehensive API of hooks.
+* Version: 3.1.24
+* Author: nikeo
+* Author URI: http://www.themesandco.com/
+* Tags: gray, white, light, blue, red, yellow, green, purple, orange, black, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-menu, custom-colors, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post, post-formats, rtl-language-support, editor-style
+* Text Domain: customizr
+* Copyright: (c) 2014 Nicolas GUILLAUME (nikeo), Nice, France
+* License: GNU General Public License v2.0 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+
+@import url("../customizr/inc/assets/css/grey.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+
+/* AF: HERE ARE SOME CSS HACKS 
+  -----------------------------------------------------------------------*/
+
+
+h2.span7.inside.site-description {
+font-family: '1942_report1942_report', Arial;
+font-size: 1.3em;
+font-style: normal;
+line-height: 100%;
+font-weight: normal;
+text-shadow: none;
+}
+
+/*
+.post h1.format-icon:before, .post h2.format-icon:before  {
+  font-family: 'genericons';
+  content: "\1F4C4"
+    font-size: 0.5em;
+    color: blue;
+    line-height: 0;
+    position: relative;
+    top: 4px;
+ }
+*/
+
+h1.entry-title.format-icon {
+  font-family: auto;
+  font-size: 2em;
+  line-height: 100%;
+  text-shadow: none;
+ }
+
+
+
+h2.entry-title {
+  font-family: 'heavy_dataregular';
+  font-size: 2em;
+  line-height: 100%;
+  
+ }
+    
+/* Default setting */
+article.page .format-icon:before {
+    content: "\1F4C4"
+    font-size: 3em;
+    line-height: 0;
+    position: relative;
+    top: 14px;
+}
+.format-icon:before {
+    font-family: 'entypo';
+    font-size: 1.2em;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    opacity: 0.2;
+    padding-right: 10px;
+    position: relative;
+    text-transform: none;
+    top: 8px;
+}
+
+/* AF: This is to get rid of boring pencil icon in post archives page. It appears alongside the title of each post. I am replacing it with a different icon. */
+/* Replace the Post/Page Icon with your own image */  
+.post h1.format-icon:before, .post h2.format-icon:before {
+    content: url(/wp-content/themes/customizrAFchild/images/custom-typewriter-icon.gif); /* AF: date: Dimanche, Le cinq Avril 2015. This is an image found online. It is a typewriter icon. I had optimize is (see below). */
+    /* For documentation on the technique I used, view the comment by jsbueno here: http://graphicdesign.stackexchange.com/questions/28058/gimp-color-to-alpha-is-not-selectable */
+    color: cornflower;
+    padding-right: 30px;
+}
+
+.post h1.format-icon:before {
+    content: url(/wp-content/themes/customizrAFchild/images/custom-typewriter-icon-2.gif); /* AF: date: Dimanche, Le cinq Avril 2015. This is an image found online. It is a typewriter icon. I had optimize is (see below). */
+    /* For documentation on the technique I used, view the comment by jsbueno here: http://graphicdesign.stackexchange.com/questions/28058/gimp-color-to-alpha-is-not-selectable */
+    color: cornflower;
+    padding-right: 30px;
+}
+
+
+
+
+
+
+
+/* Change page-id-n and the Entypo code in below examples */
+.page-id-175 article.page .format-icon:before {
+    content: "\2605";
+    color: orange;
+}
+
+
+/* Change page-id-n and the Entypo code in below examples */
+.page-id-738 article.page .format-icon:before {
+    content: "\2605";
+    color: orange;
+}
+
+
+/* Change page-id-n and the Entypo code in below examples */
+.page-id-100 article.page .format-icon:before {
+    content: "\2605";
+    color: orange;
+}
+
+
+
+/* AF: 1942 FONT-FACE
+  ----------------------------------------------------*/
+
+@font-face {
+    font-family: '1942_report1942_report';
+    src: url('AFfonts/1942-webfont.eot');
+    src: url('AFfonts/1942-webfont.eot?#iefix') format('embedded-opentype'),
+         url('AFfonts/1942-webfont.woff') format('woff'),
+         url('AFfonts/1942-webfont.ttf') format('truetype'),
+         url('AFfonts/1942-webfont.svg#1942_report1942_report') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* AF: THE AKASHI FONT-FACE FOR POST TITLES
+  ----------------------------------------------------*/
+
+@font-face {
+    font-family: 'akashiregular';
+    src: url('AFfonts/akashi-webfont.eot');
+    src: url('AFfonts/akashi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('AFfonts/akashi-webfont.woff') format('woff'),
+         url('AFfonts/akashi-webfont.ttf') format('truetype'),
+         url('AFfonts/akashi-webfont.svg#akashiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* AF: THE HEAVYDATA FONT-FACE FOR POST TITLES
+  -----------------------------------------------------*/
+
+@font-face {
+    font-family: 'heavy_dataregular';
+    src: url('AFfonts/heavy_data-webfont.eot');
+    src: url('AFfonts/heavy_data-webfont.eot?#iefix') format('embedded-opentype'),
+         url('AFfonts/heavy_data-webfont.woff') format('woff'),
+         url('AFfonts/heavy_data-webfont.ttf') format('truetype'),
+         url('AFfonts/heavy_data-webfont.svg#heavy_dataregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* AF: The next css is to prevent problems with vertical spacing in the dl element used in all the myraces templates. */
+
+dl {
+		border: 1px double #336600;
+		padding: 1.5em;		
+}
+
+dl#allraces {
+		border: 1px dashed #336600;
+}
+
+dl#races2014 {
+		border: 1px dashed #000066;
+}
+
+dl#races2015 {
+		border: 1px dashed #FFFF99;
+}
+
+.dl-horizontal dd {
+		margin-bottom: 2em;
+		
+}
+
+/* AF: the default look for the HR tag is grey, but I want alternative versions to separate the fields in the templates */
+
+hr#orange { 
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkkhaki;
+} 
+
+
+/* Gradient color1 - color2 - color1 */ hr#other { margin-top: 3em; border: 0; height: 1px; background: darkkhaki; background-image: -webkit-linear-gradient(left, #ccc, darkkhaki, #ccc); background-image: -moz-linear-gradient(left, #ccc, darkkhaki, #ccc); background-image: -ms-linear-gradient(left, #ccc, darkkhaki, #ccc); background-image: -o-linear-gradient(left, #ccc, darkkhaki, #ccc); }
+
+
+.navbar .navbar-inner {
+    z-index: 200;
+    margin: 50px 5px 40px;
+    border: 0px none;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    padding-left: 5px;
+    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-right: 20px;
+}
+
+
+/* hide the animation and countdown timer on small screens as the svg and jquery animations do not display on my mobile telephone browser */
+@media screen and (max-width: 375px)  {
+#hideaway {
+display: none;
+ }
+}
+
+/* The following CSS is to fix the layout for full-width pages. I have already created a full-width layout template which should be applied to any pages requiring no sidebar. */
+@media (min-width: 768px) {
+.page-template-full-width-php #main-wrapper {
+	width: 100%;
+	overflow-x: hidden;
+	}
+.page-template-full-width-php #main-wrapper .breadcrumbs {
+	margin-left: 10px;
+	}
+.page-template-full-width-php .container {
+	width: 100%;
+	}
+.page-template-full-width-php #content {
+	width: 98%;
+	margin: 0 auto;
+	display: inline-block;
+	}
+.page-template-full-width-php .row {
+	margin-left: 0;
+	margin-right: -30px;
+	}
+.page-template-full-width-php {overflow-x: hidden;}
+}
+
+
+/* AF: the following html added to complete the snippets on customizr web site "how to make footer sticky". The code is an an custom plugin I have created */
+html,
+body {
+    height: 100%;
+}
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto;
+}

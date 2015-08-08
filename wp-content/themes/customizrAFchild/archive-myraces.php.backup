@@ -1,0 +1,162 @@
+<?php
+/**
+ *
+ Template name: Archive My Races
+ *
+ * @package Customizr
+ * @since Customizr 1.0
+ */
+?>
+
+
+
+
+
+
+<?php do_action( '__before_main_wrapper' ); ##hook of the header with get_header ?>
+<div id="main-wrapper" class="<?php echo tc__f( 'tc_main_wrapper_classes' , 'container' ) ?>">
+
+    <?php do_action( '__before_main_container' ); ##hook of the featured page (priority 10) and breadcrumb (priority 20)...and whatever you need! ?>
+    
+    <div class="container" role="main">
+        <div class="<?php echo tc__f( 'tc_column_content_wrapper_classes' , 'row column-content-wrapper' ) ?>">
+
+            <?php do_action( '__before_article_container'); ##hook of left sidebar?>
+                
+                <div id="content" class="<?php echo tc__f( '__screen_layout' , tc__f ( '__ID' ) , 'class' ) ?> article-container">
+                
+                
+                 <?php query_posts('post_type=myraces&posts_per_page=10&paged='. get_query_var('paged')); ?>
+                
+                
+                    
+                    <?php do_action ('__before_loop');##hooks the header of the list of post : archive, search... ?>
+          
+               
+                        <?php if ( tc__f('__is_no_results') || is_404() ) : ##no search results or 404 cases ?>
+
+                            <article <?php tc__f('__article_selectors') ?>>
+                                <?php do_action( '__loop' ); ?>
+                            </article>
+                        
+                        <?php endif; ?>
+                        
+                        <?php if ( have_posts() && !is_404() ) : ?>
+                        
+                        
+                         <?php query_posts( array('post_type'=> 'myraces')); ?>
+                        
+         
+                            <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
+                               
+                                <?php the_post(); ?>
+                                                               
+                                <?php do_action ('__before_article') ?>
+                                    <article <?php tc__f('__article_selectors') ?>>
+                                             
+                                        <?php do_action( '__loop' ); ?> 
+                                        				
+					<?php
+					
+					 if( get_field( 'start_date') )
+					{
+						echo '<div class="row-fluid"><div class="span11 offset1"><div class="entry-content"><h3>Start date</h3>' . get_field('start_date');
+					}
+
+					if( get_field( 'race_country') )
+					{
+						echo '<h3>Race country</h3>' . get_field('race_country');
+					}
+					
+					
+				//	if( get_field( 'race_city_town') )
+				//	{
+				//		echo '<h3>Race City or Town</h3>' . get_field('race_city_town') . '</br></br></div></div>';
+				//
+				//	}
+				
+				
+					if( get_field( 'race_city_town') )
+					{
+						echo '<h3>Race City or Town</h3>' . get_field('race_city_town') . '</br></br>';
+				
+					}
+				
+					
+					// echo '<a href="' . get_permalink() . '" style="color: #87CEFA;">+++++</a>' . '</div></div>';
+					// echo '<a href="' . get_permalink() . '" style="color: #87CEFA;">+++++</a>' . '</div></div>';
+					echo '<a href="' . get_permalink() . '" class="btn btn-default btn-xs" role="button">see more</a>' . '</div></div>';
+					
+					
+					echo '<hr class="featurette-divider __after_loop"></hr>';
+								
+					?>
+					
+				
+					<?php
+					/**
+
+					if( get_field( 'finish_date') )
+					{
+						echo '<div class="entry-content"><h4>Finish date</h4>' . get_field('finish_date') . '</div>';
+					}
+					
+					
+					if( get_field( 'reason_for_doing') )
+					{
+						echo '<div class="entry-content"><h4>Reason for doing</h4>' . get_field('reason_for_doing') . '</div>';
+					}
+					
+					if( get_field( 'race_duration') )
+					{
+						echo '<div class="entry-content"><h4>Race duration</h4>' . get_field('race_duration') . '</div>';
+					}
+					
+					if( get_field( 'race_terrain') )
+					{
+						echo '<div class="entry-content"><h4>Race terrain</h4>' . get_field('race_terrain') . '</div>';
+					}
+					
+					if( get_field( 'web_site') )
+					{
+						echo '<div class="entry-content"><h4>Web sites</h4>' . get_field('web_site') . '</div>';
+					}
+					
+					if( get_field( 'location_on_map') )
+					{
+						echo '<div class="entry-content"><h4>Location on map</h4>' . get_field('location_on_map') . '</div>';
+					}
+					*/
+					?>
+                                       
+                                      
+                                   <?php echo '<br></br>'; ?> 
+                                        
+                                        
+                                                                                 
+                                                                 
+                                    </article>
+                                <?php do_action ('__after_article') ?>
+                                
+                            <?php endwhile; ?>
+
+                        <?php endif; ##end if have posts ?>
+
+                    <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
+
+                </div><!--.article-container -->
+                
+                
+                <?php wp_reset_query(); ?>
+                
+
+           <?php do_action( '__after_article_container'); ##hook of left sidebar ?>
+
+        </div><!--.row -->
+    </div><!-- .container role: main -->
+
+    <?php do_action( '__after_main_container' ); ?>
+
+</div><!--#main-wrapper"-->
+
+<?php do_action( '__after_main_wrapper' );##hook of the footer with get_get_footer ?>
