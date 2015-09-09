@@ -4,7 +4,7 @@
 add_action( '__after_header' , 'add_sponsor_logos', 0);
 function add_sponsor_logos() {
 echo '<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />';
-echo '<div class="container">';
+echo '<div class="container sponsor">';
 echo '<div class="row-fluid">';
 echo '<div class="span12"><div>';
 echo '<a href="http://www.myprotein.com"><img src="/afsitebuild/Myprotein_endurance_logo.jpg" alt="the logo of The MyProtein sports nutrition company" height="37" width="170" hspace="5" class="img-polaroid"></a>';
@@ -19,11 +19,11 @@ echo '<a href="http://www.seger.se/en/home.html"><img src="/afsitebuild/Logo-eps
 echo '<a href="http://www.tomtom.com/en_gb/products/your-sports/running/tomtom-runner-cardio-gps-watch/white"><img src="/afsitebuild/TomTom_CMYK_logo.jpg" alt="the logo of the Tomtom electronics company" height="34" width="175" hspace="5" class="img-polaroid"></a>';
 echo '<a href="http://checkmylevel.com/"><img src="/afsitebuild/checkmylevel.png" alt="the logo of Check My Level running company" height="48" width="114" hspace="5" class="img-polaroid"></a>';
 echo "</div></div></div></div>";
-
+echo '<hr />';
 }
 
 // add svg animation and other elements
-add_action( '__after_header' , 'add_svg_one', 0);
+/*add_action( '__after_header' , 'add_svg_one', 0);
 function add_svg_one() {
 
 echo <<<EOT
@@ -113,7 +113,7 @@ echo <<<EOV
 EOV;
 
 }
-
+*/
 
 
 

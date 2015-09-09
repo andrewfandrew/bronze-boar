@@ -263,3 +263,9 @@ body {
     height: 100%;
     margin: 0 auto;
 }
+
+/* AF: the next class provides padding at top and bottom of sponsor logos */
+div.sponsor {
+margin-top: 4%;
+margin-bottom: 9%;
+}
