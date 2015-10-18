@@ -7,14 +7,8 @@ echo '<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri();
 echo '<div class="container sponsor">';
 echo '<div class="row-fluid">';
 echo '<div class="span12"><div>';
-echo '<a href="http://www.myprotein.com"><img src="/afsitebuild/Myprotein_endurance_logo.jpg" alt="the logo of The MyProtein sports nutrition company" height="37" width="170" hspace="5" class="img-polaroid"></a>';
-
-echo '<a href="http://www.bagheera.se"><img src="/afsitebuild/bagheera1.jpg" alt="the logo of Bagheera the running wear company" height="80" width="134" hspace="5" class="img-polaroid"></a>';
-	
 echo '<a href="http://www.x-kross.se"><img src="/afsitebuild/sziolsxkrosslogl.jpg" alt="the logo of X-kross sports equipment company" height="80" width="134" hspace="5" class="img-polaroid"></a>';
-
 echo '<a href="http://www.hokaoneone.com"><img src="/afsitebuild/hoka_logo_3.png" alt="the logo of the Hoka running shoes company" height="39" width="171" hspace="5" class="img-polaroid"></a>';
-
 echo '<a href="http://www.seger.se/en/home.html"><img src="/afsitebuild/Logo-eps-1.png" alt="the logo of the Seger running company" height="59" width="90" hspace="5" class="img-polaroid"></a>';
 echo '<a href="http://www.tomtom.com/en_gb/products/your-sports/running/tomtom-runner-cardio-gps-watch/white"><img src="/afsitebuild/TomTom_CMYK_logo.jpg" alt="the logo of the Tomtom electronics company" height="34" width="175" hspace="5" class="img-polaroid"></a>';
 echo '<a href="http://checkmylevel.com/"><img src="/afsitebuild/checkmylevel.png" alt="the logo of Check My Level running company" height="48" width="114" hspace="5" class="img-polaroid"></a>';
