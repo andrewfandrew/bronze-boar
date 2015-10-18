@@ -12,7 +12,7 @@ echo '<a href="http://www.hokaoneone.com"><img src="/afsitebuild/hoka_logo_3.png
 echo '<a href="http://www.seger.se/en/home.html"><img src="/afsitebuild/Logo-eps-1.png" alt="the logo of the Seger running company" height="59" width="90" hspace="5" class="img-polaroid"></a>';
 echo '<a href="http://www.tomtom.com/en_gb/products/your-sports/running/tomtom-runner-cardio-gps-watch/white"><img src="/afsitebuild/TomTom_CMYK_logo.jpg" alt="the logo of the Tomtom electronics company" height="34" width="175" hspace="5" class="img-polaroid"></a>';
 echo '<a href="http://checkmylevel.com/"><img src="/afsitebuild/checkmylevel.png" alt="the logo of Check My Level running company" height="48" width="114" hspace="5" class="img-polaroid"></a>';
-echo "</div></div></div></div></br></br>";
+echo "</div></div></div></div></br>";
 echo '<hr />';
 }
 
