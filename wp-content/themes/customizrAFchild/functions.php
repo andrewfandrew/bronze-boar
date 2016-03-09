@@ -12,6 +12,7 @@ echo '<div class="span10 offset1">';
 echo '<a href="http://www.x-kross.se"><img src="/afsitebuild/sziolsxkrosslogl.jpg" alt="the logo of X-kross sports equipment company" height="80" width="134" hspace="8" class="img-polaroid"></a>';
 echo '<a href="http://www.seger.se/en/home.html"><img src="/afsitebuild/Logo-eps-1.png" alt="the logo of the Seger running company" height="59" width="90" hspace="8" class="img-polaroid"></a>';
 echo '<a href="http://www.tomtom.com/en_gb/products/your-sports/running/tomtom-runner-cardio-gps-watch/white"><img src="/afsitebuild/TomTom_CMYK_logo.jpg" alt="the logo of the Tomtom electronics company" height="34" width="175" hspace="7" class="img-polaroid"></a>';
+echo '<a href="http://www.gococodrinks.com"><img src="/afsitebuild/gococo-logo-1.jpg" alt="the logo of the Tomtom electronics company" height="113" width="94" hspace="7" class="img-polaroid"></a>';
 echo '<a href="http://www.altrarunning.com"><img src="/afsitebuild/altra-logo.png" alt="logo of Altra the sports company" height="79" width="198" hspace="9" class="img-polaroid"></a>';
 echo '<a href="http://checkmylevel.com/"><img src="/afsitebuild/checkmylevel.png" alt="the logo of Check My Level running company" height="48" width="114" hspace="8" class="img-polaroid"></a>';
 echo "</div></div></div></br>";
